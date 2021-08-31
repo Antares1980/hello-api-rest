@@ -4,8 +4,10 @@
   "description": "Api to send regards and general messages",
   "main": "index.js",
   "scripts": {
+    "start-server": "npm start",
     "start": "node index.js",
-    "test": "cucumber-js"
+    "test": "cucumber-js",
+    "ci": "start-server-and-test start-server http://localhost:3000 test"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "hamjest": "^3.7.2"
+    "hamjest": "^3.7.2",
+    "pactum": "^3.0.18"
   }
 }

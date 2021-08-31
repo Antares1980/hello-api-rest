@@ -1,15 +1,30 @@
-const { Given, Then, When} = require('@cucumber/cucumber')
+const pactum = require('pactum');
+const { Given, Then, When, Before} = require('@cucumber/cucumber');
 
-Given('Server is running', function () {
-// Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
+let spec = pactum.spec();
 
-When('an empty request is listened', function () {
-// Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
-When('{string} is responded', function (string) {
+Before(function() { 
+    spec = pactum.spec()
+    });
+
+
+Given('I make a Get generic request to {string}', function (string) {
     // Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
+    spec.get(string);
+  });
+
+
+When('I receive a response', async function () {
+    // Write code here that turns the phrase above into concrete actions
+    await spec.toss();
+  });
+
+Then('Response should be {string}', function (string) {
+    // Write code here that turns the phrase above into concrete actions
+    spec.response().should.have.status(200);
+  });
+
+Then('response body should contain {string}', function (string) {
+    // Write code here that turns the phrase above into concrete actions
+    spec.response().should.have.bodyContains("Generic response");
+  });

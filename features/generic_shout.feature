@@ -1,5 +1,6 @@
 Feature: Generic Shout
   Scenario: Get sent without any additional info
-    Given Server is running
-    When an empty request is listened
-    Then "Hello unknown entity" is responded
+    Given I make a Get generic request to "http://localhost:3000"
+    When I receive a response
+    Then Response should be "200"
+    And response body should contain "Generic response"
