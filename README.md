@@ -10,3 +10,6 @@ This is an example of API, including tests
 - bash install _nvm.sh
 - Configure your bash profile properly
 
+#Testing commands
+
+To run BDD tests running automatically the server, use `npm run ci`
