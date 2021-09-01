@@ -28,3 +28,10 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run ci
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 5monkeys/cobertura-action@master
+        with:
+          path: coverage/clover.xml
+          minimum_coverage: 90
