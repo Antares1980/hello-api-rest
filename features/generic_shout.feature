@@ -3,4 +3,4 @@ Feature: Generic Shout
     Given I make a Get generic request to "http://localhost:3000"
     When I receive a response
     Then Response should be "200"
-    And response body should contain "Hello entity. It's npm"
+    And response body should contain "Hello entity. It's"

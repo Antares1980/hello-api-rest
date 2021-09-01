@@ -6,8 +6,9 @@
   "scripts": {
     "start-server": "npm start",
     "start": "node index.js",
-    "test": "cucumber-js --format html:report.html",
-    "ci": "start-server-and-test start-server http://localhost:3000 test"
+    "unit-test": "mocha",
+    "bdd-test": "cucumber-js --format html:report.html",
+    "ci": "start-server-and-test start-server http://localhost:3000 bdd-test"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +18,11 @@
   },
   "devDependencies": {
     "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
+    "expect": "^27.1.0",
     "hamjest": "^3.7.2",
+    "mocha": "^9.1.1",
     "pactum": "^3.0.18",
+    "should": "^13.2.3",
     "start-server-and-test": "^1.13.1"
   }
 }
