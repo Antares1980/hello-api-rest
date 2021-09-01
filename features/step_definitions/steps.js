@@ -26,5 +26,5 @@ Then('Response should be {string}', function (string) {
 
 Then('response body should contain {string}', function (string) {
     // Write code here that turns the phrase above into concrete actions
-    spec.response().should.have.bodyContains("Generic response");
+    spec.response().should.have.bodyContains("Hello entity. It's ");
   });
