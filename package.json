@@ -6,7 +6,7 @@
   "scripts": {
     "start-server": "npm start",
     "start": "node index.js",
-    "unit-test": "nyc mocha",
+    "unit-test": "nyc --check-coverage --lines 90 mocha",
     "coverage": "nyc report --reporter=lcov",
     "bdd-test": "cucumber-js --format html:report.html",
     "ci": "start-server-and-test start-server http://localhost:3000 bdd-test && npm run unit-test && npm run coverage"
@@ -26,5 +26,8 @@
     "pactum": "^3.0.18",
     "should": "^13.2.3",
     "start-server-and-test": "^1.13.1"
+  },
+  "pre-commit": {
+    "run": "ci"
   }
 }
