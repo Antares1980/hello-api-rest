@@ -9,7 +9,8 @@
     "unit-test": "nyc --check-coverage --lines 90 mocha",
     "coverage": "nyc report --reporter=lcov",
     "bdd-test": "cucumber-js --format html:report.html",
-    "ci": "start-server-and-test start-server http://localhost:3000 bdd-test && npm run unit-test && npm run coverage"
+    "ci": "start-server-and-test start-server http://localhost:3000 bdd-test && npm run unit-test && npm run coverage",
+    "precommit-check": "start-server-and-test start-server http://localhost:3000 cucumber-js && npm run unit-test"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,6 @@
     "start-server-and-test": "^1.13.1"
   },
   "pre-commit": {
-    "run": "ci"
+    "run": "precommit-check"
   }
 }
