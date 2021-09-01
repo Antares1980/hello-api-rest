@@ -32,10 +32,9 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
+      needs: [ build ]
       - uses: 5monkeys/cobertura-action@master
         with:
           path: coverage/clover.xml
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           minimum_coverage: 90
-      - run: npm run unit-test
-      - run: npm run coverage
