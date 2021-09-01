@@ -38,4 +38,3 @@ jobs:
           path: coverage/clover.xml
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           minimum_coverage: 90
-
