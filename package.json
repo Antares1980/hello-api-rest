@@ -6,7 +6,7 @@
   "scripts": {
     "start-server": "npm start",
     "start": "node index.js",
-    "test": "cucumber-js",
+    "test": "cucumber-js --format html:report.html",
     "ci": "start-server-and-test start-server http://localhost:3000 test"
   },
   "author": "",
@@ -16,7 +16,9 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
     "hamjest": "^3.7.2",
-    "pactum": "^3.0.18"
+    "pactum": "^3.0.18",
+    "start-server-and-test": "^1.13.1"
   }
 }
