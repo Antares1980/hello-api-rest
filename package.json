@@ -11,8 +11,8 @@
     "bdd-test": "cucumber-js --format html:report.html",
     "package": "ncc build index.js",
     "ci": "start-server-and-test start-server http://localhost:3000 bdd-test && npm run unit-test && npm run coverage",
-    "precommit-check": "start-server-and-test start-server http://localhost:3000 cucumber-js && npm run unit-test",
-    "pretest": "eslint --ignore-path .gitignore ."
+    "pretest": "eslint --ignore-path .gitignore .",
+    "precommit-check": "pretest && npm run start-server-and-test start-server http://localhost:3000 cucumber-js && npm run unit-test"
   },
   "author": "",
   "license": "ISC",
