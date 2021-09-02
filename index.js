@@ -1,7 +1,7 @@
 genericMessage = require('./routes/generic');
 const express = require('express');
 const app = express();
-const appPort = 3000;
+const appPort = 8080;
 
 
 app.route('/')
