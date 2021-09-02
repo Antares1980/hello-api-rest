@@ -28,8 +28,7 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: npm run ci
-      - uses: 5monkeys/cobertura-action@master
+      - uses: actions/upload-artifact@v2
         with:
-          path: ./coverage/clover.xml
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          minimum_coverage: 90
+          name: coverage
+          path: coverage/

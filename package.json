@@ -7,7 +7,7 @@
     "start-server": "npm start",
     "start": "node index.js",
     "unit-test": "nyc --check-coverage --lines 90 mocha",
-    "coverage": "nyc report --reporter=clover",
+    "coverage": "nyc report --reporter=clover --reporter=lcov",
     "bdd-test": "cucumber-js --format html:report.html",
     "package": "ncc build index.js",
     "ci": "start-server-and-test start-server http://localhost:3000 bdd-test && npm run unit-test && npm run coverage",
