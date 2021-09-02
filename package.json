@@ -10,9 +10,9 @@
     "coverage": "nyc report --reporter=clover --reporter=lcov",
     "bdd-test": "cucumber-js --format html:report.html",
     "package": "ncc build index.js",
-    "ci": "start-server-and-test start-server http://localhost:8080 bdd-test && npm run unit-test && npm run coverage",
+    "ci": "start-server-and-test start-server http://localhost:3000 bdd-test && npm run unit-test && npm run coverage",
     "pretest": "eslint --ignore-path .gitignore .",
-    "precommit-check": "eslint --ignore-path .gitignore . && start-server-and-test start-server http://localhost:8080 cucumber-js && npm run unit-test"
+    "precommit-check": "eslint --ignore-path .gitignore . && start-server-and-test start-server http://localhost:3000 cucumber-js && npm run unit-test"
   },
   "author": "",
   "license": "ISC",
