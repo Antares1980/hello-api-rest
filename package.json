@@ -7,19 +7,25 @@
     "start-server": "npm start",
     "start": "node index.js",
     "unit-test": "nyc --check-coverage --lines 90 mocha",
-    "coverage": "nyc report --reporter=lcov",
+    "coverage": "nyc report --reporter=clover --reporter=lcov",
     "bdd-test": "cucumber-js --format html:report.html",
+    "package": "ncc build index.js",
     "ci": "start-server-and-test start-server http://localhost:3000 bdd-test && npm run unit-test && npm run coverage",
-    "precommit-check": "start-server-and-test start-server http://localhost:3000 cucumber-js && npm run unit-test"
+    "pretest": "eslint --ignore-path .gitignore .",
+    "precommit-check": "eslint --ignore-path .gitignore . && start-server-and-test start-server http://localhost:3000 cucumber-js && npm run unit-test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@cucumber/cucumber": "^7.3.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ncc": "^0.3.6"
   },
   "devDependencies": {
     "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-strongloop": "^2.1.0",
     "expect": "^27.1.0",
     "hamjest": "^3.7.2",
     "mocha": "^9.1.1",
