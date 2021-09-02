@@ -1,5 +1,5 @@
 const genericMessages = require('../routes/generic');
-
+require('should');
 
 describe('generic_message', function() {
   describe('getGenericMessage', function() {

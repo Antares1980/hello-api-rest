@@ -8,6 +8,6 @@ app.route('/')
     .get(function(req, res) {
       res.send(genericMessage.getGenericMessage());
     });
-app.listen(app_port, () => {
+app.listen(appPort, () => {
   console.log('Server running in port ' + appPort);
 });
