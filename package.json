@@ -12,7 +12,8 @@
     "package": "ncc build index.js",
     "ci": "start-server-and-test start-server http://localhost:3000 bdd-test && npm run unit-test && npm run coverage",
     "pretest": "eslint --ignore-path .gitignore .",
-    "precommit-check": "eslint --ignore-path .gitignore . && start-server-and-test start-server http://localhost:3000 cucumber-js && npm run unit-test"
+    "precommit-check": "eslint --ignore-path .gitignore . && start-server-and-test start-server http://localhost:3000 cucumber-js && npm run unit-test",
+    "uml": "node ./node_modules/node-plantuml/lib/node-plantuml-cmd generate ./uml/diagram.puml -o ./uml/diagram.png"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +30,7 @@
     "expect": "^27.1.0",
     "hamjest": "^3.7.2",
     "mocha": "^9.1.1",
+    "node-plantuml": "^0.9.0",
     "nyc": "^15.1.0",
     "pactum": "^3.0.18",
     "pre-commit": "^1.2.2",
