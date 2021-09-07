@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Api to send regards and general messages",
   "main": "index.js",
+  "engines" : { "node" : "12.x" },
   "scripts": {
     "start-server": "npm start",
     "start": "node index.js",
