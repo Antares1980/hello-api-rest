@@ -24,7 +24,8 @@
     "@cucumber/cucumber": "^7.3.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "ncc": "^0.3.6"
+    "ncc": "^0.3.6",
+    "ws": ">=5.2.3"
   },
   "devDependencies": {
     "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
