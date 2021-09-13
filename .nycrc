@@ -1,0 +1,10 @@
+{
+  "all": true,
+  "include": ["**"],
+  "exclude": [
+    "coverage/**/*.js",
+    "features/**/*.js",
+    "test/**/*.js",
+    "index.js"
+  ]
+}

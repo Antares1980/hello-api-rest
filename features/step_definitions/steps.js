@@ -36,10 +36,15 @@ Then('response body should contain {string}', function(string) {
 
 Then('Response should send the balance', function() {
   // Write code here that turns the phrase above into concrete actions
-  return 'pending';
+  spec.response().should.have.bodyContains('balance');
 });
 
 Then('reponse should send the account', function() {
   // Write code here that turns the phrase above into concrete actions
-  return 'pending';
+  spec.response().should.have.bodyContains('account');
+});
+
+Then('response should send {string}', function(string) {
+  // Write code here that turns the phrase above into concrete actions
+  spec.response().should.have.bodyContains('Hello: ');
 });
