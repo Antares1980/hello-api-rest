@@ -13,3 +13,7 @@ exports.getBalance = function(account) {
   }
   return Math.trunc(Math.random()*1000);
 };
+
+exports.getName = function(account) {
+  return 'Antonio';
+};

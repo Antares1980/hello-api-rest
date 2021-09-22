@@ -13,6 +13,21 @@ describe('accounts', function() {
       assert.equal(false, accounts.validateAccount('453612345678'));
     });
   });
+
+  // TDD for getName function
+  describe('getName', function() {
+    it('Providing an account It should return the name as string', function() {
+      const name = accounts.getName('');
+      const comparison = name.match(
+          '\\S+') == '';
+      assert.equal(false, comparison);
+    });
+    // it('It should return null is there is some error', function() {
+    //   assert.equal(true, false);
+    // });
+  });
+
+
   describe('getBalance', function() {
     it('It should return the balance as integer', function() {
       // 4 first digits are sort code sort code must be 0036
