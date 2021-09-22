@@ -34,6 +34,10 @@ describe('messages', function() {
       assert.equal(true,
           messages.sendBalanceMessage(453617654321).includes('Hello:'));
     });
+    it('It should return a json which constains a name field', function() {
+      assert.equal(true,
+          messages.sendBalanceMessage(453617654321).includes('Name:'));
+    });
   });
 });
 

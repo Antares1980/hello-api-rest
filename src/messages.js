@@ -11,7 +11,8 @@ exports.sendBalanceMessage = function(account) {
     if (null != accounts.getBalance(account)) {
       return '{"account":" + account +","balance":' +
       accounts.getBalance(account) + ',"message: "' +
-      randomMessages.randomHello() +'"}';
+      randomMessages.randomHello() + ',"Name: "'+
+      accounts.getName(account)+ '}';
     };
   };
   return '{"error": "account not available}';
