@@ -5,3 +5,4 @@ Feature: get balance
     Then Response should send the balance
     And reponse should send the account
     And response should send "Hello"
+    And response should send the name
